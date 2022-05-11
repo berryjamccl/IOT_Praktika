@@ -1,0 +1,37 @@
+menu "Example Configuration"
+
+    config BLINK_GPIO
+        int "Blink GPIO number"
+        range 0 34
+        default 19
+        help
+            GPIO number (IOxx) to blink on and off.
+
+            Some GPIOs are used for other purposes (flash connections, etc.) and cannot be used to blink.
+
+            GPIOs 35-39 are input-only so cannot be used as outputs.
+
+
+
+
+    config SLEEP_TIME_MS
+        int "Sleep time in ms"
+        range 0 10000
+        default 1000
+        help
+            Sleep time for the blink led.
+
+            can range between 0 and 10000.
+
+
+    
+    config BLINK_TIME_MS
+        int "Blink time in ms"
+        range 0 10000
+        default 5000
+        help
+            Blink time for the blink led.
+
+            can range between 0 and 10000.
+
+endmenu
